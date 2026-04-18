@@ -4,6 +4,7 @@ import { Header } from "@/components/continuity/Header";
 import { SignalRibbon } from "@/components/continuity/SignalRibbon";
 import { InterventionCard } from "@/components/continuity/InterventionCard";
 import { LearningVelocity } from "@/components/continuity/LearningVelocity";
+import { StackRail } from "@/components/continuity/StackRail";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -46,7 +47,7 @@ function Index() {
     <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
       <Header />
       <TabNav tab={tab} setTab={setTab} />
-      <main className="mx-auto max-w-6xl space-y-4 px-4 py-5">
+      <main className="mx-auto max-w-6xl space-y-4 px-4 py-5 pb-16">
         {tab === "dashboard" ? (
           <>
             <SignalRibbon />
@@ -56,6 +57,7 @@ function Index() {
           <LearningVelocity />
         )}
       </main>
+      <StackRail />
     </div>
   );
 }
