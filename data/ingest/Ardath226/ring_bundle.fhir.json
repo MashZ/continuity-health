@@ -1,0 +1,4802 @@
+{
+  "resourceType": "Bundle",
+  "id": "0bcb56fa-b15a-42d3-a83e-d5a23c1ec5dc",
+  "type": "transaction",
+  "entry": [
+    {
+      "fullUrl": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5",
+      "resource": {
+        "resourceType": "Device",
+        "id": "7bc11dc6-02e3-4489-a008-f1995159b9b5",
+        "status": "active",
+        "deviceName": [
+          {
+            "name": "Colmi R12",
+            "type": "model-name"
+          }
+        ],
+        "type": {
+          "coding": [
+            {
+              "system": "http://snomed.info/sct",
+              "code": "706767009",
+              "display": "Wearable device"
+            }
+          ],
+          "text": "Smart ring (wearable)"
+        },
+        "manufacturer": "Colmi",
+        "modelNumber": "R12",
+        "version": [
+          {
+            "type": {
+              "text": "firmware"
+            },
+            "value": "RT11CR_1.00.08_250514"
+          }
+        ],
+        "patient": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "property": [
+          {
+            "type": {
+              "text": "sensor_grounding"
+            },
+            "valueCode": [
+              {
+                "coding": [
+                  {
+                    "display": "PPG optical pulse sensor"
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Device"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:da1514f6-b550-41f3-8a83-21bc4dbdcb31",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "da1514f6-b550-41f3-8a83-21bc4dbdcb31",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:00:19.113100Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 79,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d024b328-3704-4e67-b93e-c561614bdfaa",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d024b328-3704-4e67-b93e-c561614bdfaa",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:09:54.932926Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 78,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:01252712-3d86-45f4-9eb4-770894ac7084",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "01252712-3d86-45f4-9eb4-770894ac7084",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:20:07.062376Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 77,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a15f217c-8766-4745-b9f5-0e8b2883c724",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "a15f217c-8766-4745-b9f5-0e8b2883c724",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:29:32.528265Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 80,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:63e3887b-06e8-4996-8c59-368a3fb1ee78",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "63e3887b-06e8-4996-8c59-368a3fb1ee78",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:39:35.178881Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 81,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d26f4159-4d33-4f39-80c0-07a2cb6a26b9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d26f4159-4d33-4f39-80c0-07a2cb6a26b9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:49:35.915311Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "8867-4",
+              "display": "Heart rate"
+            }
+          ],
+          "text": "Heart rate"
+        },
+        "valueQuantity": {
+          "value": 79,
+          "unit": "beats/minute",
+          "system": "http://unitsofmeasure.org",
+          "code": "/min"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_heart_rate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c32c1e09-9262-4e21-931c-9eca3f8609b2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c32c1e09-9262-4e21-931c-9eca3f8609b2",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:00:11.586241Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 97,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1ba7cb6c-2798-4439-94ea-07adeb9955f0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "1ba7cb6c-2798-4439-94ea-07adeb9955f0",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:10:28.168037Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 98,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:13312f8a-6fdf-408b-ac83-34aabe751687",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "13312f8a-6fdf-408b-ac83-34aabe751687",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:19:36.962891Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 99,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:1aae32c5-8ad5-44cf-aaa4-35cdc5a1d8e0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "1aae32c5-8ad5-44cf-aaa4-35cdc5a1d8e0",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:30:07.437830Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 98,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d13d7ce8-1e34-4bea-af7f-3403161f9055",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d13d7ce8-1e34-4bea-af7f-3403161f9055",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:10.372675Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 99,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f0ca37ad-0876-4299-a99a-7f731bad87c7",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f0ca37ad-0876-4299-a99a-7f731bad87c7",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:50:14.622199Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "59408-5",
+              "display": "Oxygen saturation in Arterial blood by Pulse oximetry"
+            }
+          ],
+          "text": "Oxygen saturation (pulse oximetry)"
+        },
+        "valueQuantity": {
+          "value": 98,
+          "unit": "%",
+          "system": "http://unitsofmeasure.org",
+          "code": "%"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_spo2"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.7200000000000001
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.07999999999999999
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.2
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0475c3ab-d46f-40aa-9b33-0e3e3da6e7bc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0475c3ab-d46f-40aa-9b33-0e3e3da6e7bc",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:00:14.685456Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 49,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:37617b6a-470c-4d59-b4c2-6f9d4796928d",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "37617b6a-470c-4d59-b4c2-6f9d4796928d",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:09:41.720966Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 44,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0835184b-6425-4cbe-a7fc-dcedd651dea9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0835184b-6425-4cbe-a7fc-dcedd651dea9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:20:23.857265Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 43,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cdc2d670-2e6c-46ad-bd81-5bfafd9e9447",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cdc2d670-2e6c-46ad-bd81-5bfafd9e9447",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:29:36.346635Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 45,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:21eca9fc-ca0c-45eb-ac1a-bb6f288c2a5d",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "21eca9fc-ca0c-45eb-ac1a-bb6f288c2a5d",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:23.398382Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 48,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6a1c69ec-68b1-4a32-bedd-1921557c8389",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6a1c69ec-68b1-4a32-bedd-1921557c8389",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:50:21.798200Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "80404-7",
+              "display": "R-R interval by EKG"
+            }
+          ],
+          "text": "Heart rate variability (RMSSD, PPG-derived)"
+        },
+        "valueQuantity": {
+          "value": 41,
+          "unit": "ms",
+          "system": "http://unitsofmeasure.org",
+          "code": "ms"
+        },
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_hrv"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.36000000000000004
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.039999999999999994
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.6
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c431c144-7851-4d0a-b918-0d6651bf9ffc",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c431c144-7851-4d0a-b918-0d6651bf9ffc",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T10:59:31.416800Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 118,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 86,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:8273ed44-1cb7-4ed3-9c4a-fb30763e3870",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "8273ed44-1cb7-4ed3-9c4a-fb30763e3870",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:09:46.240069Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 129,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 82,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c297dc4d-d4f3-422d-97ec-fdcd6d923129",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c297dc4d-d4f3-422d-97ec-fdcd6d923129",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:19:30.752174Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 129,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 76,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:70fafb7c-11cb-4416-9c9d-9eb43416b2ab",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "70fafb7c-11cb-4416-9c9d-9eb43416b2ab",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:30:12.918432Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 128,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 84,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6199ee13-da7b-4430-9318-327e3203fbec",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6199ee13-da7b-4430-9318-327e3203fbec",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:16.324502Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 120,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 80,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5b61dc19-0192-4978-b5a9-1be03cd58270",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5b61dc19-0192-4978-b5a9-1be03cd58270",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:50:23.857797Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "http://loinc.org",
+              "code": "85354-9",
+              "display": "Blood pressure panel with all children optional"
+            }
+          ],
+          "text": "Blood pressure (ring-estimated, not cuff-measured)"
+        },
+        "component": [
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8480-6",
+                  "display": "Systolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 131,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          },
+          {
+            "code": {
+              "coding": [
+                {
+                  "system": "http://loinc.org",
+                  "code": "8462-4",
+                  "display": "Diastolic blood pressure"
+                }
+              ]
+            },
+            "valueQuantity": {
+              "value": 80,
+              "unit": "mm[Hg]",
+              "system": "http://unitsofmeasure.org",
+              "code": "mm[Hg]"
+            }
+          }
+        ],
+        "note": [
+          {
+            "text": "Ring-estimated BP. The Colmi R12 has no BP cuff; values are derived from PPG pulse-wave analysis and should be treated as lifestyle-grade, not clinical."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9c08051b-968e-401f-a567-dc62bf68aa7a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9c08051b-968e-401f-a567-dc62bf68aa7a",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:00:23.598060Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 104,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7e71c76a-3d34-4102-abd5-81ed60b28dd9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7e71c76a-3d34-4102-abd5-81ed60b28dd9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:09:49.567203Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 107,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f078ff03-91f0-4de5-9766-43563c30a2c1",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f078ff03-91f0-4de5-9766-43563c30a2c1",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:20:06.112192Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 107,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dd683956-11ec-4ce0-8dca-102963b7ff94",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dd683956-11ec-4ce0-8dca-102963b7ff94",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:30:05.607926Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 110,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:5808905c-b7bf-4612-a6c7-05facf6523c9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "5808905c-b7bf-4612-a6c7-05facf6523c9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:39:43.279887Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 100,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9f4f6b7a-8cfe-4ddd-a468-7202d4b512d2",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9f4f6b7a-8cfe-4ddd-a468-7202d4b512d2",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:49:42.353734Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-bloodsugar",
+              "display": "Blood sugar estimate (proprietary)"
+            }
+          ],
+          "text": "Ring blood-sugar estimate (NOT a glucose measurement)"
+        },
+        "valueQuantity": {
+          "value": 98,
+          "unit": "mg/dL (proprietary estimate)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 has no electrochemical glucose sensor. This value is an algorithmic estimate without clinical validation. Not interchangeable with a true glucose reading."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_blood_sugar_estimate"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:d70f2a9c-5d66-410d-9772-e4297184a6ce",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "d70f2a9c-5d66-410d-9772-e4297184a6ce",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T10:59:49.775394Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 75,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:dba62c8f-bd99-4108-ab78-d996127697ef",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "dba62c8f-bd99-4108-ab78-d996127697ef",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:10:13.653780Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 78,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:6c5b8a0b-4231-4a81-b1d9-dd1e06823193",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "6c5b8a0b-4231-4a81-b1d9-dd1e06823193",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:19:55.975799Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 90,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:e42d3acf-4d2c-4458-bc7f-600cc867553a",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "e42d3acf-4d2c-4458-bc7f-600cc867553a",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:30:09.703923Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 89,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:330f1888-7fe7-4cf7-bb94-84ff41467a74",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "330f1888-7fe7-4cf7-bb94-84ff41467a74",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:09.396794Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 82,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:a3af04de-87eb-4d40-8640-34350aa5c3ac",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "a3af04de-87eb-4d40-8640-34350aa5c3ac",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:49:47.689129Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-ecg-rhythm-score",
+              "display": "ECG rhythm score (proprietary, 0-100)"
+            }
+          ],
+          "text": "ECG rhythm score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 92,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "The Colmi R12 does not produce a medical-grade ECG waveform. This value is an algorithmic rhythm classification score on a proprietary 0-100 scale. Not a substitute for clinical ECG."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_ecg_rhythm_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:0c9e3dd9-e549-4394-ba0f-a20f0a548006",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "0c9e3dd9-e549-4394-ba0f-a20f0a548006",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T10:59:46.583424Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 35,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:9f656800-f947-4768-a651-373af046d4f4",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "9f656800-f947-4768-a651-373af046d4f4",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:10:13.029082Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 34,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:79375099-21f8-488e-99cf-bcb7ac1233d0",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "79375099-21f8-488e-99cf-bcb7ac1233d0",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:20:23.253633Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 38,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c0be590d-06da-4e7e-a37b-bf146683aa66",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c0be590d-06da-4e7e-a37b-bf146683aa66",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:29:50.341892Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 33,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:41e11f9a-3c9d-43e2-82b9-8340f5495405",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "41e11f9a-3c9d-43e2-82b9-8340f5495405",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:22.353767Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 20,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:b33efbc7-4fa5-4b18-9589-995d5b11c460",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "b33efbc7-4fa5-4b18-9589-995d5b11c460",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:49:47.541201Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-fatigue-index",
+              "display": "Fatigue index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Fatigue index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 36,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary fatigue index derived from heart rate patterns and activity. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_fatigue_index"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:48f8cc7d-7ce1-4c4d-877b-99bbfeb07825",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "48f8cc7d-7ce1-4c4d-877b-99bbfeb07825",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:00:26.826198Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 36,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:c943ba1c-68e6-4951-ab15-a5dfd7f670b9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "c943ba1c-68e6-4951-ab15-a5dfd7f670b9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:10:14.532593Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 40,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fb5d1dcb-c6a9-4660-a430-c4affccb25d6",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fb5d1dcb-c6a9-4660-a430-c4affccb25d6",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:20:00.147725Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 37,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:7d9abb6d-58b2-4bf5-9c92-2777e15aec51",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "7d9abb6d-58b2-4bf5-9c92-2777e15aec51",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:30:16.295720Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 43,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f854b121-8c82-4deb-b362-0014d947d287",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f854b121-8c82-4deb-b362-0014d947d287",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:25.793861Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 35,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:771a88df-f813-42db-a8ab-4a96176598b9",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "771a88df-f813-42db-a8ab-4a96176598b9",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:50:22.347895Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-stress-pressure",
+              "display": "Stress/pressure index (proprietary, 0-100)"
+            }
+          ],
+          "text": "Stress/pressure index (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 41,
+          "unit": "index (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary stress/pressure index. Distinct from the 'blood-pressure' measurement. Not clinically validated."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_stress_pressure"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:f793e149-a6a5-47c1-bd91-74c48240e86e",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "f793e149-a6a5-47c1-bd91-74c48240e86e",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T10:59:58.133130Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 68,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:fec5cb12-9f8f-4f53-8044-6f4b1a8916a8",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "fec5cb12-9f8f-4f53-8044-6f4b1a8916a8",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:10:07.059995Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 82,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:540f65d8-2b60-47f5-9ab5-95fccb8c1c3d",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "540f65d8-2b60-47f5-9ab5-95fccb8c1c3d",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:19:42.058761Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 77,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:cf5c5a12-25fd-4a4c-b888-2da1cf748645",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "cf5c5a12-25fd-4a4c-b888-2da1cf748645",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:29:33.523995Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 71,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:31e3e557-1a5c-4b58-8976-b0abe0bb9305",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "31e3e557-1a5c-4b58-8976-b0abe0bb9305",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:40:24.372391Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 80,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    },
+    {
+      "fullUrl": "urn:uuid:07f86013-99b3-44bc-9fbb-3820c2d34619",
+      "resource": {
+        "resourceType": "Observation",
+        "id": "07f86013-99b3-44bc-9fbb-3820c2d34619",
+        "status": "preliminary",
+        "category": [
+          {
+            "coding": [
+              {
+                "system": "http://terminology.hl7.org/CodeSystem/observation-category",
+                "code": "vital-signs",
+                "display": "Vital Signs"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "urn:uuid:8ef11370-b5b1-4051-a0f0-7f9982aba39c"
+        },
+        "effectiveDateTime": "2026-04-18T11:49:49.697634Z",
+        "device": {
+          "reference": "urn:uuid:7bc11dc6-02e3-4489-a008-f1995159b9b5"
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://algebrain.ai/ns/colmi-proprietary",
+              "code": "colmi-health-score",
+              "display": "Composite health score (proprietary, 0-100)"
+            }
+          ],
+          "text": "Composite health score (proprietary, 0-100)"
+        },
+        "valueQuantity": {
+          "value": 76,
+          "unit": "score (proprietary)"
+        },
+        "note": [
+          {
+            "text": "Proprietary composite of other ring measurements. Because it folds in the low-trust measurements above, its own trust inherits the weakest link."
+          }
+        ],
+        "extension": [
+          {
+            "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion",
+            "extension": [
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-field",
+                "valueString": "ring_health_score"
+              },
+              {
+                "url": "https://algebrain.ai/fhir/StructureDefinition/sl-opinion-source",
+                "valueString": "ring_device"
+              },
+              {
+                "url": "https://jsonld-ex.github.io/ns/fhir/opinion",
+                "extension": [
+                  {
+                    "url": "belief",
+                    "valueDecimal": 0.009000000000000008
+                  },
+                  {
+                    "url": "disbelief",
+                    "valueDecimal": 0.0010000000000000007
+                  },
+                  {
+                    "url": "uncertainty",
+                    "valueDecimal": 0.99
+                  },
+                  {
+                    "url": "baseRate",
+                    "valueDecimal": 0.9
+                  }
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "request": {
+        "method": "POST",
+        "url": "Observation"
+      }
+    }
+  ],
+  "meta": {
+    "source": "algebrain-ring-ingester-synthetic",
+    "tag": [
+      {
+        "system": "https://algebrain.ai/ns/bundle-kind",
+        "code": "ring_stream",
+        "display": "Synthetic ring-device observation stream"
+      }
+    ]
+  }
+}

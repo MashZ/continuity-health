@@ -1,0 +1,117 @@
+{
+  "role": "consent_withdrawn",
+  "short_name": "Allegra202",
+  "source_filename": "Allegra202_Nitzsche158_66d017d6-97ae-4de0-b02c-2c1caa5cddf6.json",
+  "patient_id": "c247e691-cf7a-4ba6-9a62-fcce809e119f",
+  "demographic_note": "F, 85. Codes: DM(15777000). 419 obs, 37 DxR, 25 meds, last 2019-05-21",
+  "ehr_bundle": {
+    "path": "ehr_bundle.fhir.json",
+    "sha256": "c45c42ed666e897712189b6a15389b4b5a2963012079f25836af9352e849febb",
+    "bytes": 2285809,
+    "total_entries": 688,
+    "resource_type_counts": {
+      "Observation": 419,
+      "Claim": 68,
+      "Encounter": 43,
+      "ExplanationOfBenefit": 43,
+      "DiagnosticReport": 37,
+      "MedicationRequest": 25,
+      "Immunization": 12,
+      "Condition": 9,
+      "Procedure": 7,
+      "Goal": 5,
+      "Organization": 4,
+      "Practitioner": 4,
+      "CareTeam": 4,
+      "CarePlan": 4,
+      "Consent": 2,
+      "Patient": 1,
+      "Provenance": 1
+    },
+    "embedded_opinions_total": 736,
+    "embedded_opinions_by_field": {
+      "status": 664,
+      "outcome": 43,
+      "verificationStatus": 9,
+      "active": 8,
+      "lifecycleStatus": 5,
+      "achievementStatus": 5,
+      "data_quality": 1,
+      "recorded": 1
+    }
+  },
+  "ring_bundle": {
+    "path": "ring_bundle.fhir.json",
+    "sha256": "8c5f0e942306f87fb930553d5e03fdad1e232563532828c63c771b75d5c161d3",
+    "bytes": 154324,
+    "total_entries": 55,
+    "resource_type_counts": {
+      "Observation": 54,
+      "Device": 1
+    },
+    "observation_counts_by_measurement": {
+      "Heart rate": 6,
+      "Oxygen saturation (pulse oximetry)": 6,
+      "Heart rate variability (RMSSD, PPG-derived)": 6,
+      "Blood pressure (ring-estimated, not cuff-measured)": 6,
+      "Ring blood-sugar estimate (NOT a glucose measurement)": 6,
+      "ECG rhythm score (proprietary, 0-100)": 6,
+      "Fatigue index (proprietary, 0-100)": 6,
+      "Stress/pressure index (proprietary, 0-100)": 6,
+      "Composite health score (proprietary, 0-100)": 6
+    },
+    "embedded_opinions_total": 54,
+    "embedded_opinions_by_field": {
+      "ring_heart_rate": 6,
+      "ring_spo2": 6,
+      "ring_hrv": 6,
+      "ring_blood_pressure": 6,
+      "ring_blood_sugar_estimate": 6,
+      "ring_ecg_rhythm_score": 6,
+      "ring_fatigue_index": 6,
+      "ring_stress_pressure": 6,
+      "ring_health_score": 6
+    },
+    "trust_tier_distribution": {
+      "high": 12,
+      "low": 36,
+      "medium": 6
+    }
+  },
+  "wearable_bundle": {
+    "path": "wearable_bundle.fhir.json",
+    "sha256": "4d4c6ced73a4c30c628a0ba02966a04aa98e78be7a04b62d0123f5b307795457",
+    "bytes": 579671,
+    "total_entries": 211,
+    "resource_type_counts": {
+      "Observation": 210,
+      "Device": 1
+    },
+    "observation_counts_by_measurement": {
+      "Resting heart rate (overnight minimum)": 30,
+      "Heart rate variability, RMSSD (overnight, PPG-derived)": 30,
+      "Sleep efficiency (wearable-derived)": 30,
+      "Sleep stages, duration, and fragmentation": 30,
+      "SpO2 (nocturnal mean, wearable-derived)": 30,
+      "Daily steps total (wearable-derived)": 30,
+      "Daily activity summary (wearable-derived)": 30
+    },
+    "embedded_opinions_total": 210,
+    "embedded_opinions_by_field": {
+      "wearable_resting_hr": 30,
+      "wearable_hrv": 30,
+      "wearable_sleep_efficiency": 30,
+      "wearable_sleep_stages": 30,
+      "wearable_spo2_nocturnal": 30,
+      "wearable_steps": 30,
+      "wearable_activity": 30
+    },
+    "trust_tier_distribution": {
+      "medium": 120,
+      "medium_high": 90
+    },
+    "window_start": "2026-03-19T06:30:00Z",
+    "window_end": "2026-04-17T23:59:30Z"
+  },
+  "constructions_applied": "Added active Consent (HIPAA research authorization, dated 2025-04-18, scope=patient-privacy, purpose=HRESCH+TREAT). Added rejected Consent (dated today, provision=deny) with extension link to the active consent. Added Provenance (activity=UPDATE/revise, entity.role=revision, agent=Patient) recording the withdrawal transition. Wearable window ends at consent withdrawal timestamp \u2014 no post-withdrawal data."
+}
