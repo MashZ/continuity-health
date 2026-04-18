@@ -1,6 +1,7 @@
 import { cohortData } from "@/lib/cohortData";
 import { ConsentLifecycleCard } from "./ConsentLifecycleCard";
 import { ErasurePropagationCard } from "./ErasurePropagationCard";
+import { UncertaintyHeatmapCard } from "./UncertaintyHeatmapCard";
 
 function GlassCard({
   children,
@@ -124,6 +125,7 @@ export function OperatingCenter() {
 
       <ConsentLifecycleCard />
       <ErasurePropagationCard />
+      <UncertaintyHeatmapCard />
     </div>
   );
 }
