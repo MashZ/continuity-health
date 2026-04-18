@@ -1,26 +1,61 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { useState } from "react";
+import { Header } from "@/components/continuity/Header";
+import { SignalRibbon } from "@/components/continuity/SignalRibbon";
+import { InterventionCard } from "@/components/continuity/InterventionCard";
+import { LearningVelocity } from "@/components/continuity/LearningVelocity";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. For sites with multiple pages (About, Services, Contact, etc.),
-// create separate route files (about.tsx, services.tsx, contact.tsx) — don't put all pages in this file.
-function PlaceholderIndex() {
+type Tab = "dashboard" | "learning";
+
+function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
+  const base =
+    "ease-smooth relative px-4 py-2 text-sm font-medium text-[#94a3b8] hover:text-[#e2e8f0]";
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <nav className="sticky top-[57px] z-30 border-b border-white/10 bg-[#0d1117]/80 backdrop-blur-xl">
+      <div className="mx-auto flex max-w-6xl gap-1 px-4">
+        <button
+          onClick={() => setTab("dashboard")}
+          className={`${base} ${tab === "dashboard" ? "text-[#e2e8f0]" : ""}`}
+        >
+          Dashboard
+          {tab === "dashboard" && (
+            <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
+          )}
+        </button>
+        <button
+          onClick={() => setTab("learning")}
+          className={`${base} ${tab === "learning" ? "text-[#e2e8f0]" : ""}`}
+        >
+          Learning Velocity
+          {tab === "learning" && (
+            <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
+          )}
+        </button>
+      </div>
+    </nav>
   );
 }
 
 function Index() {
-  return <PlaceholderIndex />;
+  const [tab, setTab] = useState<Tab>("dashboard");
+  return (
+    <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
+      <Header />
+      <TabNav tab={tab} setTab={setTab} />
+      <main className="mx-auto max-w-6xl space-y-4 px-4 py-5">
+        {tab === "dashboard" ? (
+          <>
+            <SignalRibbon />
+            <InterventionCard />
+          </>
+        ) : (
+          <LearningVelocity />
+        )}
+      </main>
+    </div>
+  );
 }
