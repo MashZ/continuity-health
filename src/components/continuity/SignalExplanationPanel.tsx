@@ -22,10 +22,7 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
   ];
 
   return (
-    <div
-      className="overflow-hidden"
-      style={{ animation: "barGrow 0.2s ease-in", transformOrigin: "top" }}
-    >
+    <div className="overflow-hidden animate-accordion-down">
       <div className="mt-4 border-t border-white/10 pt-4">
         <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-[#94a3b8]">
           Why this nudge?
