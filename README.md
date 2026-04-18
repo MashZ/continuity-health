@@ -2,7 +2,7 @@
 
 **The agentic patient-engagement layer of HealthEngine Enterprise.**
 
-Continuity is white-labeled through HealthEngine's physician and provider-network marketplace, priced per-patient-per-month, and aligned with established CMS reimbursement pathways (RPM, RTM, CCM).
+Continuity is white-labeled through HealthEngine's physician and provider-network marketplace and aligned with the **CMS ACCESS Model** (Advancing Chronic Care with Effective, Scalable Solutions) and its **Outcome-Aligned Payments (OAPs)** for technology-supported chronic care, beginning **July 5, 2026**.
 
 > Continuity operates upstream of any single condition — on the allostatic-load precursors — and hands off to whichever program the provider prescribes. It is **not** a diagnostic tool. Escalation to a human clinician is a first-class output.
 
@@ -32,17 +32,20 @@ A live, end-to-end demo of the Continuity agentic layer:
 
 ---
 
-## Revenue Model — Per-Patient-Per-Month, CMS-Aligned
+## Revenue Model — Outcome-Aligned Payments under CMS ACCESS
 
-| CMS pathway | What it covers | Continuity's role |
+The CMS ACCESS Model replaces fee-for-service activity codes (RPM, RTM, CCM) with **Outcome-Aligned Payments (OAPs)** — a recurring per-patient payment to the participating care organization, with full payment tied to the share of patients who hit measurable, condition-specific outcome targets. Continuity is built for this payment shape: the entire stack exists to move outcome biomarkers from each patient's starting point.
+
+| ACCESS track | Conditions + outcome targets | Continuity's role |
 |---|---|---|
-| **RPM** — Remote Physiologic Monitoring | Continuous physiological data (HR, HRV, SpO2, BP) with clinician review, PPPM. | Signal Layer + Intelligence Layer produce the continuous record and summaries. |
-| **RTM** — Remote Therapeutic Monitoring | Non-physiological data (behavior, adherence, activity) with clinician oversight, PPPM. | Action Layer + Learning Layer document nudge delivery and patient response. |
-| **CCM** — Chronic Care Management | 20+ minutes/month of non-face-to-face care coordination for patients with 2+ chronic conditions. | Each provider-visible, provider-reviewed agent interaction counts toward documented time. |
+| **eCKM** — Early cardio-kidney-metabolic | Hypertension, dyslipidemia, obesity with central adiposity, prediabetes. Targets: BP, lipids, weight, HbA1c trajectory. | Signal Layer + Intelligence Layer drive the continuous biosignal record; Action Layer delivers the lifestyle micro-interventions that move the biomarkers. |
+| **CKM** — Cardio-kidney-metabolic | Diabetes, CKD 3a/3b, ASCVD. Targets: HbA1c, BP, lipid control. | 30-day baseline + agentic tension surfaces non-adherence and decompensation early; escalation routes to clinician before the outcome window closes. |
+| **MSK** — Musculoskeletal | Chronic musculoskeletal pain. Targets: validated PROMs (pain, function, mood). | Behavioral-Engagement agent drives PROM capture cadence and movement-based interventions. |
+| **BH** — Behavioral health | Depression, anxiety. Targets: validated PROMs (PHQ-9, GAD-7). | Action Layer schedules check-ins; escalation-as-first-class-output routes risk signals to a licensed clinician. |
 
-License fee per patient per month sits in the low-to-mid double digits — well below the CMS reimbursement envelope so the provider network captures the upside. SaaS gross margin profile (inference + storage <10% of license fee). Illustrative: 10,000 chronic-care patients × 12 months → seven-figure ARR on a single network contract.
+The HealthEngine provider network is the ACCESS-enrolled care organization; Continuity is its technology-supported care layer. PCPs receive the new ACCESS **co-management payment** for documented review of the electronic patient updates Continuity generates. Continuity earns a share of the OAP the network captures per qualifying patient — paid on outcomes, not activity. Outcome-share thresholds rise with each participation year, so the agentic learning curve compounds directly into revenue. Illustrative: 10,000 ACCESS-enrolled patients across eCKM + CKM tracks → seven-figure ARR on a single network contract; SaaS gross margin profile (inference + storage <10% of fee). Major Medicare Advantage plans have pledged ACCESS-aligned payment options, extending the same shape beyond Original Medicare.
 
-**Incentive alignment:** provider gets reimbursed more when Continuity runs well. HealthEngine gets paid when providers buy it. Continuity gets paid when HealthEngine distributes it. Patient stays out of the ER.
+**Incentive alignment:** the provider network only gets paid in full when the cohort hits its outcome targets. Continuity is the system that moves those targets. HealthEngine gets paid when providers buy it. Continuity gets paid when HealthEngine distributes it. Patient stays out of the ER. The trade is *outcomes, not activity*.
 
 ---
 
@@ -58,9 +61,9 @@ License fee per patient per month sits in the low-to-mid double digits — well 
 ## Go-To-Market
 
 - **Phase 0 — hackathon (today):** demo the agentic layer end-to-end, lock the HealthEngine partnership on record.
-- **Phase 1 — first pilot (90 days):** one HealthEngine-nominated provider network, 200–500 patients. Metrics: CCM-documented-time PPPM, RPM billing-event frequency, 30-day calibration curve.
-- **Phase 2 — multi-network (180 days):** three additional provider networks. Demonstrate reduced ER visits and readmissions.
-- **Phase 3 — whole-network rollout + payer contracts (12+ months):** marketplace-wide distribution plus direct contracts with Medicare Advantage plans (capitation rewards prevention directly).
+- **Phase 1 — first pilot (90 days):** one HealthEngine-nominated provider network, 200–500 patients across one or two ACCESS tracks (eCKM + CKM). Metrics: share of cohort meeting their outcome target, 30-day calibration curve, escalation precision.
+- **Phase 2 — multi-network (180 days):** three additional provider networks. Demonstrate outcome-target attainment rates that clear ACCESS payment thresholds and document reduced ER visits / readmissions.
+- **Phase 3 — whole-network rollout + payer contracts (12+ months):** marketplace-wide distribution under ACCESS, plus direct ACCESS-aligned contracts with Medicare Advantage plans (per the published payer pledge).
 
 ---
 

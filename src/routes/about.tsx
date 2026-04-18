@@ -12,7 +12,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Continuity is the agentic patient-engagement layer of HealthEngine Enterprise — per-patient-per-month, aligned with CMS RPM, RTM, and CCM reimbursement.",
+          "Continuity is the agentic patient-engagement layer of HealthEngine Enterprise — aligned with the CMS ACCESS Model and its Outcome-Aligned Payments for technology-supported chronic care.",
       },
       { property: "og:title", content: "Continuity — Agentic patient engagement for HealthEngine" },
       {
@@ -26,27 +26,34 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const cmsRows = [
+const accessTracks = [
   {
-    name: "RPM",
-    full: "Remote Physiologic Monitoring",
+    name: "eCKM",
+    full: "Early cardio-kidney-metabolic",
     covers:
-      "Continuous physiological data (HR, HRV, SpO₂, BP where available) with clinician review, per-patient-per-month.",
-    role: "Signal Layer + Intelligence Layer produce the continuous record and the summaries.",
+      "Hypertension, dyslipidemia, obesity with central adiposity, prediabetes. Outcome targets: BP, lipids, weight, HbA1c trajectory from each patient's starting point.",
+    role: "Signal Layer + Intelligence Layer drive the continuous biosignal record. Action Layer delivers the lifestyle micro-interventions that move the outcome biomarkers.",
   },
   {
-    name: "RTM",
-    full: "Remote Therapeutic Monitoring",
+    name: "CKM",
+    full: "Cardio-kidney-metabolic",
     covers:
-      "Non-physiological data (behavior, adherence, activity) with clinician oversight, per-patient-per-month.",
-    role: "Action Layer + Learning Layer document nudge delivery and patient response.",
+      "Diabetes, CKD stage 3a/3b, atherosclerotic cardiovascular disease. Outcome targets: HbA1c control, BP control, lipid management.",
+    role: "30-day baseline + agentic tension surfaces non-adherence and decompensation early. Escalation routes to clinician before the outcome window closes.",
   },
   {
-    name: "CCM",
-    full: "Chronic Care Management",
+    name: "MSK",
+    full: "Musculoskeletal",
     covers:
-      "20+ minutes/month of non-face-to-face care coordination for patients with 2+ chronic conditions.",
-    role: "Each provider-visible, provider-reviewed agent interaction counts toward documented time.",
+      "Chronic musculoskeletal pain. Outcome targets: validated PROMs for pain, function, mood.",
+    role: "Behavioral-Engagement agent drives PROM capture cadence and movement-based interventions.",
+  },
+  {
+    name: "BH",
+    full: "Behavioral health",
+    covers:
+      "Depression and anxiety. Outcome targets: validated PROMs (PHQ-9, GAD-7) of mood and function.",
+    role: "Action Layer schedules check-ins; escalation-as-first-class-output routes risk signals to a licensed clinician immediately.",
   },
 ];
 
@@ -80,7 +87,7 @@ const phases = [
     tag: "Phase 1",
     when: "90 days",
     title: "First pilot provider network",
-    body: "HealthEngine nominates one provider network. Continuity deploys to 200–500 patients. Metrics: CCM-documented-time PPPM, RPM billing-event frequency, 30-day calibration curve.",
+    body: "HealthEngine nominates one provider network. Continuity deploys to 200–500 patients across one or two ACCESS tracks (eCKM + CKM). Metrics: share of cohort meeting their condition-specific outcome target, 30-day calibration curve, escalation precision.",
   },
   {
     tag: "Phase 2",
@@ -180,7 +187,7 @@ function AboutPage() {
         <div className="relative mx-auto max-w-6xl px-4 py-20 sm:py-28">
           <div className="inline-flex items-center gap-2 rounded-full border border-white/10 bg-white/[0.04] px-3 py-1 text-[11px] uppercase tracking-wider text-[#94a3b8]">
             <span className="h-1.5 w-1.5 rounded-full bg-[#00d4aa]" />
-            Powered by HealthEngine · CMS-aligned
+            Powered by HealthEngine · CMS ACCESS Model
           </div>
           <h1 className="mt-5 max-w-4xl text-4xl font-semibold leading-[1.05] tracking-tight text-[#e2e8f0] sm:text-6xl">
             The agentic patient-engagement layer of{" "}
@@ -191,9 +198,12 @@ function AboutPage() {
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[#94a3b8] sm:text-lg">
             White-labeled through HealthEngine's physician and provider-network marketplace.
-            Priced per-patient-per-month. Aligned with established CMS reimbursement
-            pathways — RPM, RTM, and CCM. Continuity operates upstream of any single
-            condition and hands off to whichever program the provider prescribes.
+            Aligned with the CMS{" "}
+            <span className="text-[#e2e8f0]">ACCESS Model</span> — Advancing Chronic Care
+            with Effective, Scalable Solutions — and its Outcome-Aligned Payments (OAPs)
+            for technology-supported chronic care, beginning July 5, 2026. Continuity
+            operates upstream of any single condition and hands off to whichever program
+            the provider prescribes.
           </p>
 
           <div className="mt-8 flex flex-wrap gap-3">
@@ -213,8 +223,8 @@ function AboutPage() {
 
           <dl className="mt-14 grid grid-cols-2 gap-px overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] sm:grid-cols-4">
             {[
-              { k: "PPPM", v: "Per-patient-per-month pricing" },
-              { k: "RPM · RTM · CCM", v: "CMS reimbursement pathways" },
+              { k: "OAP", v: "Outcome-Aligned Payments — paid on results, not activity" },
+              { k: "ACCESS", v: "CMS Innovation Center model · launches July 5, 2026" },
               { k: "30-day", v: "Rolling personal baseline" },
               { k: "0", v: "Diagnostic claims, by design" },
             ].map((s) => (
@@ -267,21 +277,28 @@ function AboutPage() {
             Revenue Model
           </div>
           <h2 className="text-2xl font-semibold tracking-tight text-[#e2e8f0] sm:text-3xl">
-            Per-patient-per-month, CMS-aligned.
+            Outcome-Aligned Payments under the CMS ACCESS Model.
           </h2>
           <p className="mt-3 max-w-3xl text-sm leading-relaxed text-[#94a3b8]">
-            Continuity licenses a per-patient-per-month fee to the provider network.
-            Providers cover the fee through three Medicare reimbursement pathways
-            Continuity is designed to support.
+            ACCESS replaces fee-for-service activity codes (RPM, RTM, CCM) with
+            Outcome-Aligned Payments: a recurring per-patient payment to the care
+            organization, with full payment tied to the share of patients who hit
+            measurable, condition-specific outcome targets. Continuity is built for this
+            payment shape — the entire stack exists to move outcome biomarkers (BP, HbA1c,
+            lipids, weight, validated PROMs) from each patient's starting point. The
+            HealthEngine provider network is the ACCESS-enrolled care organization;
+            Continuity is its technology-supported care layer. PCPs receive the new
+            ACCESS co-management payment for reviewing the electronic patient updates
+            Continuity generates.
           </p>
 
           <div className="mt-6 overflow-hidden rounded-2xl border border-white/10">
             <div className="hidden grid-cols-12 gap-4 bg-white/[0.04] px-5 py-3 text-[11px] font-semibold uppercase tracking-wider text-[#94a3b8] md:grid">
-              <div className="col-span-3">CMS pathway</div>
-              <div className="col-span-5">What it covers</div>
+              <div className="col-span-3">ACCESS track</div>
+              <div className="col-span-5">Conditions + outcome targets</div>
               <div className="col-span-4">Continuity's role</div>
             </div>
-            {cmsRows.map((r) => (
+            {accessTracks.map((r) => (
               <div
                 key={r.name}
                 className="grid grid-cols-1 gap-3 border-t border-white/10 bg-white/[0.02] px-5 py-4 text-[13px] md:grid-cols-12 md:gap-4"
@@ -300,18 +317,21 @@ function AboutPage() {
             <div className="glass rounded-2xl p-5">
               <div className="text-[13px] font-semibold text-[#e2e8f0]">Unit economics, illustrative</div>
               <ul className="mt-3 space-y-2 text-[13px] text-[#94a3b8]">
-                <li>License fee in the low-to-mid double digits PPPM, well below the CMS reimbursement envelope.</li>
-                <li>10,000 chronic-care patients × 12 months → seven-figure ARR on a single network contract.</li>
-                <li>SaaS gross margin: marginal cost (inference + storage) under 10% of license fee.</li>
+                <li>Continuity earns a share of the OAP the provider network captures per qualifying patient — paid on outcomes, not activity.</li>
+                <li>Outcome-share thresholds rise each participation year: the agentic learning curve compounds directly into revenue.</li>
+                <li>10,000 ACCESS-enrolled patients across eCKM + CKM tracks → seven-figure ARR on a single network contract; SaaS gross margin (inference + storage &lt; 10% of fee).</li>
+                <li>Medicare Advantage plans have pledged ACCESS-aligned payment options — the same shape extends beyond Original Medicare.</li>
               </ul>
             </div>
             <div className="glass rounded-2xl p-5">
               <div className="text-[13px] font-semibold text-[#e2e8f0]">Incentive alignment</div>
               <p className="mt-3 text-[13px] leading-relaxed text-[#94a3b8]">
-                Provider gets reimbursed more when Continuity runs well. HealthEngine gets
-                paid when providers buy it. Continuity gets paid when HealthEngine
-                distributes it. Patient stays out of the ER. All four parties on the same
-                side of the trade.
+                Under ACCESS, the provider network only gets paid in full when the cohort
+                hits its outcome targets. Continuity is the system that moves those
+                targets. HealthEngine gets paid when providers buy it. Continuity gets
+                paid when HealthEngine distributes it. Patient stays out of the ER.
+                Every party is on the same side of the trade — and the trade is
+                <span className="text-[#e2e8f0]"> outcomes, not activity</span>.
               </p>
             </div>
           </div>
