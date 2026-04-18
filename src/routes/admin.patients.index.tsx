@@ -9,7 +9,7 @@ const bucketSchema = z
   .enum(["critical", "rising", "watch", "stable", "signal_gap"])
   .optional();
 
-export const Route = createFileRoute("/admin/patients")({
+export const Route = createFileRoute("/admin/patients/")({
   validateSearch: z.object({ bucket: bucketSchema }),
   component: PatientsPage,
 });
