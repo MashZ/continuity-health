@@ -5,6 +5,7 @@ import { SignalRibbon } from "@/components/continuity/SignalRibbon";
 import { InterventionCard } from "@/components/continuity/InterventionCard";
 import { LearningVelocity } from "@/components/continuity/LearningVelocity";
 import { LifesEssential8Card } from "@/components/continuity/LifesEssential8Card";
+import { EscalationBanner } from "@/components/continuity/EscalationBanner";
 import { StackRail } from "@/components/continuity/StackRail";
 
 export const Route = createFileRoute("/")({
@@ -44,14 +45,19 @@ function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
 
 function Index() {
   const [tab, setTab] = useState<Tab>("dashboard");
+  const [escalation, setEscalation] = useState(false);
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
-      <Header />
+      <Header
+        escalation={escalation}
+        onToggleEscalation={() => setEscalation((v) => !v)}
+      />
       <TabNav tab={tab} setTab={setTab} />
       <main className="mx-auto max-w-6xl space-y-4 px-4 py-5 pb-16">
         {tab === "dashboard" ? (
           <>
             <SignalRibbon />
+            <EscalationBanner active={escalation} />
             <InterventionCard />
             <LifesEssential8Card />
           </>
