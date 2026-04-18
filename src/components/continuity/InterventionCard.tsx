@@ -21,8 +21,17 @@ export function InterventionCard() {
     });
   };
 
+  const tier: string = a.risk_tier;
+  const riskDotColor =
+    tier === "HIGH" ? "#ef4444" : tier === "LOW" ? "#00d4aa" : "#f59e0b";
+
   return (
-    <div className="glass ease-smooth rounded-2xl p-5">
+    <div className="glass ease-smooth relative rounded-2xl p-5">
+      <span
+        aria-label={`Risk tier: ${a.risk_tier}`}
+        className="absolute right-3 top-3 h-2 w-2 rounded-full"
+        style={{ backgroundColor: riskDotColor, boxShadow: `0 0 8px ${riskDotColor}` }}
+      />
       <p className="text-[15px] font-semibold leading-snug text-[#e2e8f0]">{a.nudge}</p>
 
       <div className="mt-3 space-y-1.5 text-[11px] text-[#94a3b8]">
