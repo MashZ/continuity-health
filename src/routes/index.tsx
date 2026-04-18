@@ -4,6 +4,7 @@ import { Header } from "@/components/continuity/Header";
 import { SignalRibbon } from "@/components/continuity/SignalRibbon";
 import { InterventionCard } from "@/components/continuity/InterventionCard";
 import { LearningVelocity } from "@/components/continuity/LearningVelocity";
+import { StackRail } from "@/components/continuity/StackRail";
 
 export const Route = createFileRoute("/")({
   component: Index,
