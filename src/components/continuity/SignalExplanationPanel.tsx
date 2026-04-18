@@ -1,12 +1,6 @@
-import { useEffect, useState } from "react";
 import { mockAgentResponse } from "@/lib/agentResponse";
 
 export function SignalExplanationPanel({ open }: { open: boolean }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    if (open) setMounted(true);
-  }, [open]);
-
   if (!open) return null;
 
   const rows = mockAgentResponse.signal_attribution;
@@ -22,10 +16,7 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
   ];
 
   return (
-    <div
-      className="overflow-hidden"
-      style={{ animation: "barGrow 0.2s ease-in", transformOrigin: "top" }}
-    >
+    <div className="overflow-hidden animate-accordion-down">
       <div className="mt-4 border-t border-white/10 pt-4">
         <div className="mb-3 text-xs font-semibold uppercase tracking-wider text-[#94a3b8]">
           Why this nudge?
@@ -51,7 +42,6 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
                         width: `${widthPct / 2}%`,
                         background: "#00d4aa",
                         animationDelay: `${i * 0.08}s`,
-                        opacity: mounted ? 1 : 0,
                       }}
                     />
                   ) : (
@@ -61,7 +51,6 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
                         width: `${widthPct / 2}%`,
                         background: "rgba(245, 158, 11, 0.6)",
                         animationDelay: `${i * 0.08}s`,
-                        opacity: mounted ? 1 : 0,
                       }}
                     />
                   )}
