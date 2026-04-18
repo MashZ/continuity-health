@@ -1,4 +1,5 @@
 import { cohortData } from "@/lib/cohortData";
+import { ConsentLifecycleCard } from "./ConsentLifecycleCard";
 
 function GlassCard({
   children,
