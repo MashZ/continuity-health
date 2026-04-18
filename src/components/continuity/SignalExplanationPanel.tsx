@@ -1,12 +1,6 @@
-import { useEffect, useState } from "react";
 import { mockAgentResponse } from "@/lib/agentResponse";
 
 export function SignalExplanationPanel({ open }: { open: boolean }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => {
-    if (open) setMounted(true);
-  }, [open]);
-
   if (!open) return null;
 
   const rows = mockAgentResponse.signal_attribution;
