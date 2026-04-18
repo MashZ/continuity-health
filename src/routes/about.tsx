@@ -151,6 +151,7 @@ const team = [
 function AboutPage() {
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
+      {/* ACCESS Model revenue layer */}
       {/* Top bar */}
       <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0d1117]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-6xl items-center justify-between px-4 py-3">
