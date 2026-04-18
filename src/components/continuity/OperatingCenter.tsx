@@ -1,4 +1,5 @@
 import { cohortData } from "@/lib/cohortData";
+import { ConsentLifecycleCard } from "./ConsentLifecycleCard";
 
 function GlassCard({
   children,
@@ -119,6 +120,8 @@ export function OperatingCenter() {
           both moderate). Compliance Algebra: Syed, Silaghi, Abujar, Alssadi (2026).
         </p>
       </div>
+
+      <ConsentLifecycleCard />
     </div>
   );
 }
