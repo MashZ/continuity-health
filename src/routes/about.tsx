@@ -12,7 +12,7 @@ export const Route = createFileRoute("/about")({
       {
         name: "description",
         content:
-          "Continuity is the agentic patient-engagement layer of HealthEngine Enterprise — per-patient-per-month, aligned with CMS RPM, RTM, and CCM reimbursement.",
+          "Continuity is the agentic patient-engagement layer of HealthEngine Enterprise — aligned with the CMS ACCESS Model and its Outcome-Aligned Payments for technology-supported chronic care.",
       },
       { property: "og:title", content: "Continuity — Agentic patient engagement for HealthEngine" },
       {
@@ -26,27 +26,34 @@ export const Route = createFileRoute("/about")({
   component: AboutPage,
 });
 
-const cmsRows = [
+const accessTracks = [
   {
-    name: "RPM",
-    full: "Remote Physiologic Monitoring",
+    name: "eCKM",
+    full: "Early cardio-kidney-metabolic",
     covers:
-      "Continuous physiological data (HR, HRV, SpO₂, BP where available) with clinician review, per-patient-per-month.",
-    role: "Signal Layer + Intelligence Layer produce the continuous record and the summaries.",
+      "Hypertension, dyslipidemia, obesity with central adiposity, prediabetes. Outcome targets: BP, lipids, weight, HbA1c trajectory from each patient's starting point.",
+    role: "Signal Layer + Intelligence Layer drive the continuous biosignal record. Action Layer delivers the lifestyle micro-interventions that move the outcome biomarkers.",
   },
   {
-    name: "RTM",
-    full: "Remote Therapeutic Monitoring",
+    name: "CKM",
+    full: "Cardio-kidney-metabolic",
     covers:
-      "Non-physiological data (behavior, adherence, activity) with clinician oversight, per-patient-per-month.",
-    role: "Action Layer + Learning Layer document nudge delivery and patient response.",
+      "Diabetes, CKD stage 3a/3b, atherosclerotic cardiovascular disease. Outcome targets: HbA1c control, BP control, lipid management.",
+    role: "30-day baseline + agentic tension surfaces non-adherence and decompensation early. Escalation routes to clinician before the outcome window closes.",
   },
   {
-    name: "CCM",
-    full: "Chronic Care Management",
+    name: "MSK",
+    full: "Musculoskeletal",
     covers:
-      "20+ minutes/month of non-face-to-face care coordination for patients with 2+ chronic conditions.",
-    role: "Each provider-visible, provider-reviewed agent interaction counts toward documented time.",
+      "Chronic musculoskeletal pain. Outcome targets: validated PROMs for pain, function, mood.",
+    role: "Behavioral-Engagement agent drives PROM capture cadence and movement-based interventions.",
+  },
+  {
+    name: "BH",
+    full: "Behavioral health",
+    covers:
+      "Depression and anxiety. Outcome targets: validated PROMs (PHQ-9, GAD-7) of mood and function.",
+    role: "Action Layer schedules check-ins; escalation-as-first-class-output routes risk signals to a licensed clinician immediately.",
   },
 ];
 
