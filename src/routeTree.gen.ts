@@ -12,6 +12,15 @@ import { Route as rootRouteImport } from './routes/__root'
 import { Route as AdminRouteImport } from './routes/admin'
 import { Route as AboutRouteImport } from './routes/about'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdminIndexRouteImport } from './routes/admin.index'
+import { Route as AdminTrendsRouteImport } from './routes/admin.trends'
+import { Route as AdminSettingsRouteImport } from './routes/admin.settings'
+import { Route as AdminReimbursementRouteImport } from './routes/admin.reimbursement'
+import { Route as AdminPatientsRouteImport } from './routes/admin.patients'
+import { Route as AdminEscalationsRouteImport } from './routes/admin.escalations'
+import { Route as AdminAuditRouteImport } from './routes/admin.audit'
+import { Route as AdminAgentsRouteImport } from './routes/admin.agents'
+import { Route as AdminPatientsPatientIdRouteImport } from './routes/admin.patients.$patientId'
 
 const AdminRoute = AdminRouteImport.update({
   id: '/admin',
@@ -28,35 +37,142 @@ const IndexRoute = IndexRouteImport.update({
   path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
+const AdminIndexRoute = AdminIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminTrendsRoute = AdminTrendsRouteImport.update({
+  id: '/trends',
+  path: '/trends',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminSettingsRoute = AdminSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminReimbursementRoute = AdminReimbursementRouteImport.update({
+  id: '/reimbursement',
+  path: '/reimbursement',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPatientsRoute = AdminPatientsRouteImport.update({
+  id: '/patients',
+  path: '/patients',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminEscalationsRoute = AdminEscalationsRouteImport.update({
+  id: '/escalations',
+  path: '/escalations',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAuditRoute = AdminAuditRouteImport.update({
+  id: '/audit',
+  path: '/audit',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminAgentsRoute = AdminAgentsRouteImport.update({
+  id: '/agents',
+  path: '/agents',
+  getParentRoute: () => AdminRoute,
+} as any)
+const AdminPatientsPatientIdRoute = AdminPatientsPatientIdRouteImport.update({
+  id: '/$patientId',
+  path: '/$patientId',
+  getParentRoute: () => AdminPatientsRoute,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/admin/agents': typeof AdminAgentsRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/escalations': typeof AdminEscalationsRoute
+  '/admin/patients': typeof AdminPatientsRouteWithChildren
+  '/admin/reimbursement': typeof AdminReimbursementRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/trends': typeof AdminTrendsRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin/agents': typeof AdminAgentsRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/escalations': typeof AdminEscalationsRoute
+  '/admin/patients': typeof AdminPatientsRouteWithChildren
+  '/admin/reimbursement': typeof AdminReimbursementRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/trends': typeof AdminTrendsRoute
+  '/admin': typeof AdminIndexRoute
+  '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
-  '/admin': typeof AdminRoute
+  '/admin': typeof AdminRouteWithChildren
+  '/admin/agents': typeof AdminAgentsRoute
+  '/admin/audit': typeof AdminAuditRoute
+  '/admin/escalations': typeof AdminEscalationsRoute
+  '/admin/patients': typeof AdminPatientsRouteWithChildren
+  '/admin/reimbursement': typeof AdminReimbursementRoute
+  '/admin/settings': typeof AdminSettingsRoute
+  '/admin/trends': typeof AdminTrendsRoute
+  '/admin/': typeof AdminIndexRoute
+  '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/' | '/about' | '/admin'
+  fullPaths:
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/admin/agents'
+    | '/admin/audit'
+    | '/admin/escalations'
+    | '/admin/patients'
+    | '/admin/reimbursement'
+    | '/admin/settings'
+    | '/admin/trends'
+    | '/admin/'
+    | '/admin/patients/$patientId'
   fileRoutesByTo: FileRoutesByTo
-  to: '/' | '/about' | '/admin'
-  id: '__root__' | '/' | '/about' | '/admin'
+  to:
+    | '/'
+    | '/about'
+    | '/admin/agents'
+    | '/admin/audit'
+    | '/admin/escalations'
+    | '/admin/patients'
+    | '/admin/reimbursement'
+    | '/admin/settings'
+    | '/admin/trends'
+    | '/admin'
+    | '/admin/patients/$patientId'
+  id:
+    | '__root__'
+    | '/'
+    | '/about'
+    | '/admin'
+    | '/admin/agents'
+    | '/admin/audit'
+    | '/admin/escalations'
+    | '/admin/patients'
+    | '/admin/reimbursement'
+    | '/admin/settings'
+    | '/admin/trends'
+    | '/admin/'
+    | '/admin/patients/$patientId'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
-  AdminRoute: typeof AdminRoute
+  AdminRoute: typeof AdminRouteWithChildren
 }
 
 declare module '@tanstack/react-router' {
@@ -82,14 +198,122 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/admin/': {
+      id: '/admin/'
+      path: '/'
+      fullPath: '/admin/'
+      preLoaderRoute: typeof AdminIndexRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/trends': {
+      id: '/admin/trends'
+      path: '/trends'
+      fullPath: '/admin/trends'
+      preLoaderRoute: typeof AdminTrendsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/settings': {
+      id: '/admin/settings'
+      path: '/settings'
+      fullPath: '/admin/settings'
+      preLoaderRoute: typeof AdminSettingsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/reimbursement': {
+      id: '/admin/reimbursement'
+      path: '/reimbursement'
+      fullPath: '/admin/reimbursement'
+      preLoaderRoute: typeof AdminReimbursementRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/patients': {
+      id: '/admin/patients'
+      path: '/patients'
+      fullPath: '/admin/patients'
+      preLoaderRoute: typeof AdminPatientsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/escalations': {
+      id: '/admin/escalations'
+      path: '/escalations'
+      fullPath: '/admin/escalations'
+      preLoaderRoute: typeof AdminEscalationsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/audit': {
+      id: '/admin/audit'
+      path: '/audit'
+      fullPath: '/admin/audit'
+      preLoaderRoute: typeof AdminAuditRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/agents': {
+      id: '/admin/agents'
+      path: '/agents'
+      fullPath: '/admin/agents'
+      preLoaderRoute: typeof AdminAgentsRouteImport
+      parentRoute: typeof AdminRoute
+    }
+    '/admin/patients/$patientId': {
+      id: '/admin/patients/$patientId'
+      path: '/$patientId'
+      fullPath: '/admin/patients/$patientId'
+      preLoaderRoute: typeof AdminPatientsPatientIdRouteImport
+      parentRoute: typeof AdminPatientsRoute
+    }
   }
 }
+
+interface AdminPatientsRouteChildren {
+  AdminPatientsPatientIdRoute: typeof AdminPatientsPatientIdRoute
+}
+
+const AdminPatientsRouteChildren: AdminPatientsRouteChildren = {
+  AdminPatientsPatientIdRoute: AdminPatientsPatientIdRoute,
+}
+
+const AdminPatientsRouteWithChildren = AdminPatientsRoute._addFileChildren(
+  AdminPatientsRouteChildren,
+)
+
+interface AdminRouteChildren {
+  AdminAgentsRoute: typeof AdminAgentsRoute
+  AdminAuditRoute: typeof AdminAuditRoute
+  AdminEscalationsRoute: typeof AdminEscalationsRoute
+  AdminPatientsRoute: typeof AdminPatientsRouteWithChildren
+  AdminReimbursementRoute: typeof AdminReimbursementRoute
+  AdminSettingsRoute: typeof AdminSettingsRoute
+  AdminTrendsRoute: typeof AdminTrendsRoute
+  AdminIndexRoute: typeof AdminIndexRoute
+}
+
+const AdminRouteChildren: AdminRouteChildren = {
+  AdminAgentsRoute: AdminAgentsRoute,
+  AdminAuditRoute: AdminAuditRoute,
+  AdminEscalationsRoute: AdminEscalationsRoute,
+  AdminPatientsRoute: AdminPatientsRouteWithChildren,
+  AdminReimbursementRoute: AdminReimbursementRoute,
+  AdminSettingsRoute: AdminSettingsRoute,
+  AdminTrendsRoute: AdminTrendsRoute,
+  AdminIndexRoute: AdminIndexRoute,
+}
+
+const AdminRouteWithChildren = AdminRoute._addFileChildren(AdminRouteChildren)
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
-  AdminRoute: AdminRoute,
+  AdminRoute: AdminRouteWithChildren,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { createStart } from '@tanstack/react-start'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+  }
+}
