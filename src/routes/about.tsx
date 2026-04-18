@@ -1,4 +1,9 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
+import mashPhoto from "@/assets/team/mash-zahid.jpeg";
+import eliasPhoto from "@/assets/team/elias-jimenez.jpeg";
+import muntaserPhoto from "@/assets/team/muntaser-syed.jpeg";
+import jonathanPhoto from "@/assets/team/jonathan-weiss.jpeg";
+import stephenPhoto from "@/assets/team/stephen-borstelmann.jpeg";
 
 export const Route = createFileRoute("/about")({
   head: () => ({
@@ -104,30 +109,35 @@ const team = [
     role: "Co-founder",
     bio: "IBM Associate Partner, GM AskGM (engagement enabled everything in track 1 for GM), OpenAI Academy speaker (6,800+ attendees), Chicago Booth MBA. Founder of Discimen — AI enablement & AI risk valuation, with a live agentic AI enablement demo and a top-tier client pipeline.",
     initials: "MZ",
+    photo: mashPhoto,
   },
   {
     name: "Elias Jimenez",
     role: "Co-founder",
     bio: "Merging XR (VR, AR) with outdoor themed movement-based pursuits. XR Founder at VentR-out. 17 years as engineer at Cisco.",
     initials: "EJ",
+    photo: eliasPhoto,
   },
   {
     name: "Muntaser Syed",
     role: "Co-founder",
     bio: "Hardcore IEEE engineer; inventor of the underlying biosensor hardware during this project. PhD Computer Engineering.",
     initials: "MS",
+    photo: muntaserPhoto,
   },
   {
     name: "Dr. Jonathan Weiss",
     role: "Design partner — HealthEngine",
     bio: "Founder & CEO of HealthEngine (Miami — 1101 Brickell Ave). UChicago MD/MBA, Oxford, Harvard. Distribution, enterprise GTM, provider-network credibility.",
     initials: "JW",
+    photo: jonathanPhoto,
   },
   {
     name: "Dr. Stephen Borstelmann",
     role: "Clinical lead",
     bio: "Interventional radiology (non-practicing). Goldman Sachs commodities trading. Algorithmic trading systems engineer. Clinical validation + health-economics framing. Columbia, NY Medical.",
     initials: "SB",
+    photo: stephenPhoto,
   },
 ];
 
@@ -394,16 +404,13 @@ function AboutPage() {
             {team.map((t) => (
               <article key={t.name} className="glass rounded-2xl p-5">
                 <div className="flex items-center gap-3">
-                  <div
-                    className="grid h-12 w-12 place-items-center rounded-full text-sm font-semibold text-[#0d1117]"
-                    style={{
-                      background:
-                        "linear-gradient(135deg, #00d4aa 0%, #22d3ee 100%)",
-                    }}
-                    aria-hidden
-                  >
-                    {t.initials}
-                  </div>
+                  <img
+                    src={t.photo}
+                    alt={t.name}
+                    loading="lazy"
+                    className="h-12 w-12 rounded-full object-cover ring-2 ring-[#00d4aa]/40"
+                  />
+                  <span className="sr-only">{t.initials}</span>
                   <div>
                     <div className="text-[14px] font-semibold text-[#e2e8f0]">{t.name}</div>
                     <div className="text-[11px] uppercase tracking-wider text-[#00d4aa]">
