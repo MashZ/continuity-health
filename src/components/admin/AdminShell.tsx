@@ -19,7 +19,14 @@ import {
   User,
 } from "lucide-react";
 
-const NAV = [
+type NavItem = {
+  to: "/admin" | "/admin/escalations" | "/admin/patients" | "/admin/trends" | "/admin/agents" | "/admin/reimbursement" | "/admin/audit" | "/admin/settings";
+  label: string;
+  icon: typeof LayoutDashboard;
+  exact?: boolean;
+};
+
+const NAV: readonly NavItem[] = [
   { to: "/admin", label: "Overview", icon: LayoutDashboard, exact: true },
   { to: "/admin/escalations", label: "Escalations", icon: AlertTriangle },
   { to: "/admin/patients", label: "Patients", icon: Users },
@@ -28,7 +35,7 @@ const NAV = [
   { to: "/admin/reimbursement", label: "Reimbursement", icon: FileText },
   { to: "/admin/audit", label: "Audit", icon: ScrollText },
   { to: "/admin/settings", label: "Settings", icon: Settings },
-] as const;
+];
 
 const RAIL_LAYERS = [
   { key: "signal", label: "Signal", Icon: Radio },
