@@ -53,6 +53,7 @@ function Index() {
           <>
             <SignalRibbon />
             <InterventionCard />
+            <LifesEssential8Card />
           </>
         ) : (
           <LearningVelocity />
