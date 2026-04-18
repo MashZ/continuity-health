@@ -42,7 +42,6 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
                         width: `${widthPct / 2}%`,
                         background: "#00d4aa",
                         animationDelay: `${i * 0.08}s`,
-                        opacity: mounted ? 1 : 0,
                       }}
                     />
                   ) : (
@@ -52,7 +51,6 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
                         width: `${widthPct / 2}%`,
                         background: "rgba(245, 158, 11, 0.6)",
                         animationDelay: `${i * 0.08}s`,
-                        opacity: mounted ? 1 : 0,
                       }}
                     />
                   )}
