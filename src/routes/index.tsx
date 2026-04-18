@@ -8,6 +8,7 @@ import { LifesEssential8Card } from "@/components/continuity/LifesEssential8Card
 import { EscalationBanner } from "@/components/continuity/EscalationBanner";
 import { StackRail } from "@/components/continuity/StackRail";
 import { OperatingCenter } from "@/components/continuity/OperatingCenter";
+import { ConditionsCard } from "@/components/continuity/ConditionsCard";
 import { useCohortShare } from "@/lib/useCohortShare";
 
 export const Route = createFileRoute("/")({
@@ -81,6 +82,7 @@ function Index() {
           <>
             <SignalRibbon />
             <EscalationBanner active={escalation} />
+            <ConditionsCard />
             <InterventionCard />
             <LifesEssential8Card />
           </>

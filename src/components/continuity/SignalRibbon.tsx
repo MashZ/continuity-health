@@ -1,4 +1,4 @@
-import { signalData } from "@/lib/mockData";
+import { wearableSignals } from "@/lib/patientData";
 import {
   Tooltip,
   TooltipContent,
@@ -12,6 +12,25 @@ function LiveBadge() {
       <span className="h-1.5 w-1.5 rounded-full bg-[#00d4aa]" />
       LIVE
     </span>
+  );
+}
+
+function SimBadge() {
+  return (
+    <TooltipProvider delayDuration={150}>
+      <Tooltip>
+        <TooltipTrigger asChild>
+          <span className="inline-flex cursor-default items-center gap-1 rounded-full border border-white/10 bg-white/[0.03] px-1.5 py-0.5 text-[9px] font-medium uppercase tracking-wider text-[#94a3b8]">
+            wearable · sim
+          </span>
+        </TooltipTrigger>
+        <TooltipContent className="max-w-xs">
+          Wearable layer (HRV, RHR, sleep, steps) is a simulated feed. The FHIR bundle for this
+          patient does not contain wearable Observations — these would arrive from a paired device
+          stream in production.
+        </TooltipContent>
+      </Tooltip>
+    </TooltipProvider>
   );
 }
 
@@ -42,24 +61,26 @@ function GlassCard({ children }: { children: React.ReactNode }) {
 }
 
 export function SignalRibbon() {
-  const { hrv, sleep, restingHR } = signalData;
+  const { hrv, sleep, restingHR, activity } = wearableSignals;
   const hrvDelta = Math.round(((hrv.current - hrv.baseline30d) / hrv.baseline30d) * 100);
+  const rhrDelta = Math.round(((restingHR.current - restingHR.baseline30d) / restingHR.baseline30d) * 100);
   const sleepTotal = sleep.rem + sleep.deep + sleep.light;
 
   return (
     <div className="space-y-3">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 lg:grid-cols-4">
         {/* HRV */}
         <GlassCard>
-          <div className="flex items-center justify-between">
-            <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">
-              HRV
-            </span>
-            <LiveBadge />
+          <div className="flex items-center justify-between gap-1">
+            <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">HRV</span>
+            <div className="flex items-center gap-1">
+              <SimBadge />
+              <LiveBadge />
+            </div>
           </div>
           <div className="mt-2 flex items-baseline gap-1">
             <span className="text-2xl font-semibold text-[#e2e8f0]">{hrv.current}</span>
-            <span className="text-xs text-[#64748b]">ms</span>
+            <span className="text-xs text-[#64748b]">{hrv.unit}</span>
           </div>
           <div className="mt-1">
             <Sparkline values={hrv.trend} color={hrvDelta < 0 ? "#f59e0b" : "#00d4aa"} />
@@ -75,15 +96,18 @@ export function SignalRibbon() {
 
         {/* Sleep */}
         <GlassCard>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-1">
             <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">
-              Sleep Architecture
+              Sleep efficiency
             </span>
-            <LiveBadge />
+            <div className="flex items-center gap-1">
+              <SimBadge />
+              <LiveBadge />
+            </div>
           </div>
           <div className="mt-2 flex items-baseline gap-1">
-            <span className="text-2xl font-semibold text-[#e2e8f0]">{sleep.score}</span>
-            <span className="text-xs text-[#64748b]">/100</span>
+            <span className="text-2xl font-semibold text-[#e2e8f0]">{sleep.efficiencyPct}</span>
+            <span className="text-xs text-[#64748b]">%</span>
           </div>
           <div className="mt-2 flex h-2 w-full overflow-hidden rounded-full bg-white/5">
             <div
@@ -108,20 +132,52 @@ export function SignalRibbon() {
 
         {/* Resting HR */}
         <GlassCard>
-          <div className="flex items-center justify-between">
+          <div className="flex items-center justify-between gap-1">
             <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">
               Resting HR
             </span>
-            <LiveBadge />
+            <div className="flex items-center gap-1">
+              <SimBadge />
+              <LiveBadge />
+            </div>
           </div>
           <div className="mt-2 flex items-baseline gap-1">
             <span className="text-2xl font-semibold text-[#e2e8f0]">{restingHR.current}</span>
-            <span className="text-xs text-[#64748b]">bpm</span>
+            <span className="text-xs text-[#64748b]">{restingHR.unit}</span>
           </div>
           <div className="mt-1">
-            <Sparkline values={restingHR.trend} />
+            <Sparkline values={restingHR.trend} color={rhrDelta > 0 ? "#f59e0b" : "#00d4aa"} />
           </div>
-          <div className="mt-1 text-[11px] text-[#64748b]">7-day trend</div>
+          <div className="mt-1 text-[11px] text-[#64748b]">
+            <span className={rhrDelta > 0 ? "text-amber" : "text-teal"}>
+              {rhrDelta > 0 ? "+" : ""}
+              {rhrDelta}%
+            </span>{" "}
+            vs. 30-day baseline
+          </div>
+        </GlassCard>
+
+        {/* Activity (steps) */}
+        <GlassCard>
+          <div className="flex items-center justify-between gap-1">
+            <span className="text-xs font-medium uppercase tracking-wider text-[#94a3b8]">
+              Activity · 7d avg
+            </span>
+            <div className="flex items-center gap-1">
+              <SimBadge />
+              <LiveBadge />
+            </div>
+          </div>
+          <div className="mt-2 flex items-baseline gap-1">
+            <span className="text-2xl font-semibold text-[#e2e8f0]">
+              {activity.avgSteps7d.toLocaleString()}
+            </span>
+            <span className="text-xs text-[#64748b]">steps</span>
+          </div>
+          <div className="mt-1">
+            <Sparkline values={activity.trend} color="#0891b2" />
+          </div>
+          <div className="mt-1 text-[11px] text-[#64748b]">Below sedentary threshold</div>
         </GlassCard>
       </div>
 
