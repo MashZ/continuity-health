@@ -20,6 +20,7 @@ import { Route as AdminPatientsRouteImport } from './routes/admin.patients'
 import { Route as AdminEscalationsRouteImport } from './routes/admin.escalations'
 import { Route as AdminAuditRouteImport } from './routes/admin.audit'
 import { Route as AdminAgentsRouteImport } from './routes/admin.agents'
+import { Route as AdminPatientsIndexRouteImport } from './routes/admin.patients.index'
 import { Route as AdminPatientsPatientIdRouteImport } from './routes/admin.patients.$patientId'
 
 const AdminRoute = AdminRouteImport.update({
@@ -77,6 +78,11 @@ const AdminAgentsRoute = AdminAgentsRouteImport.update({
   path: '/agents',
   getParentRoute: () => AdminRoute,
 } as any)
+const AdminPatientsIndexRoute = AdminPatientsIndexRouteImport.update({
+  id: '/',
+  path: '/',
+  getParentRoute: () => AdminPatientsRoute,
+} as any)
 const AdminPatientsPatientIdRoute = AdminPatientsPatientIdRouteImport.update({
   id: '/$patientId',
   path: '/$patientId',
@@ -96,6 +102,7 @@ export interface FileRoutesByFullPath {
   '/admin/trends': typeof AdminTrendsRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
+  '/admin/patients/': typeof AdminPatientsIndexRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
@@ -103,12 +110,12 @@ export interface FileRoutesByTo {
   '/admin/agents': typeof AdminAgentsRoute
   '/admin/audit': typeof AdminAuditRoute
   '/admin/escalations': typeof AdminEscalationsRoute
-  '/admin/patients': typeof AdminPatientsRouteWithChildren
   '/admin/reimbursement': typeof AdminReimbursementRoute
   '/admin/settings': typeof AdminSettingsRoute
   '/admin/trends': typeof AdminTrendsRoute
   '/admin': typeof AdminIndexRoute
   '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
+  '/admin/patients': typeof AdminPatientsIndexRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -124,6 +131,7 @@ export interface FileRoutesById {
   '/admin/trends': typeof AdminTrendsRoute
   '/admin/': typeof AdminIndexRoute
   '/admin/patients/$patientId': typeof AdminPatientsPatientIdRoute
+  '/admin/patients/': typeof AdminPatientsIndexRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -140,6 +148,7 @@ export interface FileRouteTypes {
     | '/admin/trends'
     | '/admin/'
     | '/admin/patients/$patientId'
+    | '/admin/patients/'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
@@ -147,12 +156,12 @@ export interface FileRouteTypes {
     | '/admin/agents'
     | '/admin/audit'
     | '/admin/escalations'
-    | '/admin/patients'
     | '/admin/reimbursement'
     | '/admin/settings'
     | '/admin/trends'
     | '/admin'
     | '/admin/patients/$patientId'
+    | '/admin/patients'
   id:
     | '__root__'
     | '/'
@@ -167,6 +176,7 @@ export interface FileRouteTypes {
     | '/admin/trends'
     | '/admin/'
     | '/admin/patients/$patientId'
+    | '/admin/patients/'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -254,6 +264,13 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdminAgentsRouteImport
       parentRoute: typeof AdminRoute
     }
+    '/admin/patients/': {
+      id: '/admin/patients/'
+      path: '/'
+      fullPath: '/admin/patients/'
+      preLoaderRoute: typeof AdminPatientsIndexRouteImport
+      parentRoute: typeof AdminPatientsRoute
+    }
     '/admin/patients/$patientId': {
       id: '/admin/patients/$patientId'
       path: '/$patientId'
@@ -266,10 +283,12 @@ declare module '@tanstack/react-router' {
 
 interface AdminPatientsRouteChildren {
   AdminPatientsPatientIdRoute: typeof AdminPatientsPatientIdRoute
+  AdminPatientsIndexRoute: typeof AdminPatientsIndexRoute
 }
 
 const AdminPatientsRouteChildren: AdminPatientsRouteChildren = {
   AdminPatientsPatientIdRoute: AdminPatientsPatientIdRoute,
+  AdminPatientsIndexRoute: AdminPatientsIndexRoute,
 }
 
 const AdminPatientsRouteWithChildren = AdminPatientsRoute._addFileChildren(
