@@ -1,3 +1,4 @@
+import { Link } from "@tanstack/react-router";
 import {
   Tooltip,
   TooltipContent,
@@ -14,7 +15,15 @@ export function Header({ escalation = false, onToggleEscalation }: HeaderProps =
   return (
     <header className="sticky top-0 z-40 border-b border-white/10 bg-[#0d1117]/80 backdrop-blur-xl">
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-3 px-4 py-3">
-        <div className="font-bold tracking-tight text-[#e2e8f0] text-lg">Continuity</div>
+        <div className="flex items-center gap-3">
+          <div className="font-bold tracking-tight text-[#e2e8f0] text-lg">Continuity</div>
+          <Link
+            to="/about"
+            className="ease-smooth hidden sm:inline-block rounded-md px-2 py-1 text-xs text-[#94a3b8] hover:text-[#e2e8f0]"
+          >
+            About
+          </Link>
+        </div>
 
         <TooltipProvider delayDuration={150}>
           <Tooltip>
