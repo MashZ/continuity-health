@@ -21,8 +21,9 @@ export function InterventionCard() {
     });
   };
 
+  const tier: string = a.risk_tier;
   const riskDotColor =
-    a.risk_tier === "HIGH" ? "#ef4444" : a.risk_tier === "LOW" ? "#00d4aa" : "#f59e0b";
+    tier === "HIGH" ? "#ef4444" : tier === "LOW" ? "#00d4aa" : "#f59e0b";
 
   return (
     <div className="glass ease-smooth relative rounded-2xl p-5">
