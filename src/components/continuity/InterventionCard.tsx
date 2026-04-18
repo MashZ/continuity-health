@@ -1,11 +1,25 @@
 import { useState } from "react";
 import { ChevronDown } from "lucide-react";
+import { toast } from "sonner";
 import { mockAgentResponse } from "@/lib/agentResponse";
 import { SignalExplanationPanel } from "./SignalExplanationPanel";
 
 export function InterventionCard() {
   const [open, setOpen] = useState(false);
+  const [decision, setDecision] = useState<string | null>(null);
   const a = mockAgentResponse;
+
+  const handleAction = (action: string) => {
+    setDecision(action);
+    const messages: Record<string, string> = {
+      Accept: "Accepted — pre-ordering low-glycemic lunch now.",
+      Modify: "Opening modification options…",
+      Dismiss: "Dismissed — the system will learn from this.",
+    };
+    toast.success(messages[action] ?? action, {
+      description: "Decision logged to Learning Velocity.",
+    });
+  };
 
   return (
     <div className="glass ease-smooth rounded-2xl p-5">
@@ -22,20 +36,39 @@ export function InterventionCard() {
       </div>
 
       <div className="mt-4 flex flex-wrap items-center gap-2">
-        <button className="ease-smooth flex-1 min-w-[90px] rounded-lg bg-[#00d4aa] px-4 py-2 text-sm font-semibold text-[#0d1117] hover:bg-[#00d4aa]/90">
+        <button
+          type="button"
+          onClick={() => handleAction(a.action_buttons[0])}
+          className="ease-smooth flex-1 min-w-[90px] cursor-pointer rounded-lg bg-[#00d4aa] px-4 py-2 text-sm font-semibold text-[#0d1117] hover:bg-[#00d4aa]/90 active:scale-[0.98]"
+        >
           {a.action_buttons[0]}
         </button>
-        <button className="ease-smooth flex-1 min-w-[90px] rounded-lg border border-[#00d4aa] px-4 py-2 text-sm font-semibold text-[#00d4aa] hover:bg-[#00d4aa]/10">
+        <button
+          type="button"
+          onClick={() => handleAction(a.action_buttons[1])}
+          className="ease-smooth flex-1 min-w-[90px] cursor-pointer rounded-lg border border-[#00d4aa] px-4 py-2 text-sm font-semibold text-[#00d4aa] hover:bg-[#00d4aa]/10 active:scale-[0.98]"
+        >
           {a.action_buttons[1]}
         </button>
-        <button className="ease-smooth flex-1 min-w-[90px] rounded-lg px-4 py-2 text-sm font-semibold text-[#94a3b8] hover:bg-white/5">
+        <button
+          type="button"
+          onClick={() => handleAction(a.action_buttons[2])}
+          className="ease-smooth flex-1 min-w-[90px] cursor-pointer rounded-lg px-4 py-2 text-sm font-semibold text-[#94a3b8] hover:bg-white/5 active:scale-[0.98]"
+        >
           {a.action_buttons[2]}
         </button>
       </div>
 
+      {decision && (
+        <div className="mt-2 text-[11px] text-[#64748b]">
+          Last decision: <span className="text-[#00d4aa]">{decision}</span>
+        </div>
+      )}
+
       <button
+        type="button"
         onClick={() => setOpen((v) => !v)}
-        className="ease-smooth mt-3 flex w-full items-center justify-center gap-1 rounded-lg py-1.5 text-[11px] font-medium text-[#94a3b8] hover:text-[#e2e8f0]"
+        className="ease-smooth mt-3 flex w-full cursor-pointer items-center justify-center gap-1 rounded-lg py-1.5 text-[11px] font-medium text-[#94a3b8] hover:text-[#e2e8f0]"
       >
         {open ? "Hide" : "Why this nudge?"}
         <ChevronDown
