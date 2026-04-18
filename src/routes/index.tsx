@@ -53,7 +53,7 @@ function TabNav({
             onClick={() => setTab("operating")}
             className={`${base} ${tab === "operating" ? "text-[#e2e8f0]" : ""}`}
           >
-            Operating Center
+            Continuity Operating Center
             {tab === "operating" && (
               <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
             )}
