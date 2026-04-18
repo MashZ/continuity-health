@@ -1,43 +1,14 @@
-import { useEffect, useState } from "react";
 import {
   Tooltip,
   TooltipContent,
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-
-const STORAGE_KEY = "continuity.cohortShareOptIn";
+import { useCohortShare } from "@/lib/useCohortShare";
 
 export function CohortShareChip() {
-  const [on, setOn] = useState<boolean>(true);
-  const [hydrated, setHydrated] = useState(false);
-
-  useEffect(() => {
-    try {
-      const raw = localStorage.getItem(STORAGE_KEY);
-      if (raw === null) {
-        localStorage.setItem(STORAGE_KEY, "true");
-        setOn(true);
-      } else {
-        setOn(raw === "true");
-      }
-    } catch {
-      // ignore
-    }
-    setHydrated(true);
-  }, []);
-
-  const toggle = () => {
-    setOn((v) => {
-      const next = !v;
-      try {
-        localStorage.setItem(STORAGE_KEY, String(next));
-      } catch {
-        // ignore
-      }
-      return next;
-    });
-  };
+  const [on, setOn, hydrated] = useCohortShare();
+  const toggle = () => setOn();
 
   const style = on
     ? {

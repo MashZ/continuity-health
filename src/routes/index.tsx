@@ -8,6 +8,7 @@ import { LifesEssential8Card } from "@/components/continuity/LifesEssential8Card
 import { EscalationBanner } from "@/components/continuity/EscalationBanner";
 import { StackRail } from "@/components/continuity/StackRail";
 import { OperatingCenter } from "@/components/continuity/OperatingCenter";
+import { useCohortShare } from "@/lib/useCohortShare";
 
 export const Route = createFileRoute("/")({
   component: Index,
@@ -15,7 +16,15 @@ export const Route = createFileRoute("/")({
 
 type Tab = "dashboard" | "learning" | "operating";
 
-function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
+function TabNav({
+  tab,
+  setTab,
+  showOperating,
+}: {
+  tab: Tab;
+  setTab: (t: Tab) => void;
+  showOperating: boolean;
+}) {
   const base =
     "ease-smooth relative px-4 py-2 text-sm font-medium text-[#94a3b8] hover:text-[#e2e8f0]";
   return (
@@ -39,15 +48,17 @@ function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
             <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
           )}
         </button>
-        <button
-          onClick={() => setTab("operating")}
-          className={`${base} ${tab === "operating" ? "text-[#e2e8f0]" : ""}`}
-        >
-          Operating Center
-          {tab === "operating" && (
-            <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
-          )}
-        </button>
+        {showOperating && (
+          <button
+            onClick={() => setTab("operating")}
+            className={`${base} ${tab === "operating" ? "text-[#e2e8f0]" : ""}`}
+          >
+            Operating Center
+            {tab === "operating" && (
+              <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
+            )}
+          </button>
+        )}
       </div>
     </nav>
   );
@@ -56,15 +67,17 @@ function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
 function Index() {
   const [tab, setTab] = useState<Tab>("dashboard");
   const [escalation, setEscalation] = useState(false);
+  const [cohortShare] = useCohortShare();
+  const activeTab: Tab = tab === "operating" && !cohortShare ? "dashboard" : tab;
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
       <Header
         escalation={escalation}
         onToggleEscalation={() => setEscalation((v) => !v)}
       />
-      <TabNav tab={tab} setTab={setTab} />
+      <TabNav tab={activeTab} setTab={setTab} showOperating={cohortShare} />
       <main className="mx-auto max-w-6xl space-y-4 px-4 py-5 pb-16">
-        {tab === "dashboard" && (
+        {activeTab === "dashboard" && (
           <>
             <SignalRibbon />
             <EscalationBanner active={escalation} />
@@ -72,8 +85,8 @@ function Index() {
             <LifesEssential8Card />
           </>
         )}
-        {tab === "learning" && <LearningVelocity />}
-        {tab === "operating" && <OperatingCenter />}
+        {activeTab === "learning" && <LearningVelocity />}
+        {activeTab === "operating" && <OperatingCenter />}
       </main>
       <StackRail />
     </div>
