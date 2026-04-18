@@ -29,8 +29,7 @@ export function StackRail() {
                 {it.icon}
               </span>
               <span
-                className="ml-1 inline-block h-1.5 w-1.5 rounded-full bg-[#00d4aa]"
-                style={{ animation: "railPulse 0.8s ease-in-out infinite" }}
+                className="animate-breathe ml-1 inline-block h-1.5 w-1.5 rounded-full bg-[#00d4aa]"
               />
             </span>
             <span className="hidden sm:inline text-[11px] font-medium">{it.label}</span>

@@ -8,7 +8,7 @@ import {
 
 function LiveBadge() {
   return (
-    <span className="inline-flex items-center gap-1 rounded-full bg-[#00d4aa]/10 px-1.5 py-0.5 text-[10px] font-medium text-[#00d4aa]">
+    <span className="animate-breathe inline-flex items-center gap-1 rounded-full bg-[#00d4aa]/10 px-1.5 py-0.5 text-[10px] font-medium text-[#00d4aa]">
       <span className="h-1.5 w-1.5 rounded-full bg-[#00d4aa]" />
       LIVE
     </span>
