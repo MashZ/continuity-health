@@ -37,20 +37,26 @@ export function useCohortShare(): [boolean, (next?: boolean) => void, boolean] {
   }, []);
 
   const set = (next?: boolean) => {
-    setOn((v) => {
-      const value = typeof next === "boolean" ? next : !v;
+    const current = (() => {
       try {
-        localStorage.setItem(STORAGE_KEY, String(value));
+        const raw = localStorage.getItem(STORAGE_KEY);
+        return raw === null ? on : raw === "true";
       } catch {
-        // ignore
+        return on;
       }
-      try {
-        window.dispatchEvent(new CustomEvent(EVENT, { detail: value }));
-      } catch {
-        // ignore
-      }
-      return value;
-    });
+    })();
+    const value = typeof next === "boolean" ? next : !current;
+    try {
+      localStorage.setItem(STORAGE_KEY, String(value));
+    } catch {
+      // ignore
+    }
+    setOn(value);
+    try {
+      window.dispatchEvent(new CustomEvent(EVENT, { detail: value }));
+    } catch {
+      // ignore
+    }
   };
 
   return [on, set, hydrated];
