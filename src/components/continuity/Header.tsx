@@ -5,6 +5,7 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
+import { CohortShareChip } from "./CohortShareChip";
 
 type HeaderProps = {
   escalation?: boolean;
@@ -25,19 +26,22 @@ export function Header({ escalation = false, onToggleEscalation }: HeaderProps =
           </Link>
         </div>
 
-        <TooltipProvider delayDuration={150}>
-          <Tooltip>
-            <TooltipTrigger asChild>
-              <div className="cursor-default rounded-full border border-white/15 px-3 py-1 text-xs text-[#94a3b8]">
-                <span className="hidden sm:inline">Powered by </span>HealthEngine
-              </div>
-            </TooltipTrigger>
-            <TooltipContent className="max-w-xs">
-              HealthEngine is the physician and provider-network marketplace Continuity extends.
-              Design partner for this build.
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
+        <div className="flex items-center gap-2">
+          <TooltipProvider delayDuration={150}>
+            <Tooltip>
+              <TooltipTrigger asChild>
+                <div className="cursor-default rounded-full border border-white/15 px-3 py-1 text-xs text-[#94a3b8]">
+                  <span className="hidden sm:inline">Powered by </span>HealthEngine
+                </div>
+              </TooltipTrigger>
+              <TooltipContent className="max-w-xs">
+                HealthEngine is the physician and provider-network marketplace Continuity extends.
+                Design partner for this build.
+              </TooltipContent>
+            </Tooltip>
+          </TooltipProvider>
+          <CohortShareChip />
+        </div>
 
         <div className="flex items-center gap-2">
           {onToggleEscalation && (
