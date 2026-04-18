@@ -65,21 +65,24 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
         </p>
 
         {/* Agent badges */}
-        <div className="mt-4 space-y-2">
+        <div className="mt-4 grid grid-cols-1 gap-2">
           <AgentBadge
             icon="🫀"
             name="Clinical"
             text={tensions.clinical_agent.rationale}
+            accent="#00d4aa"
           />
           <AgentBadge
             icon="🛡"
             name="Prevention Economics"
             text="7-day HRV decline → ~40% elevated sick-day risk ($300–500 productivity event)"
+            accent="#f59e0b"
           />
           <AgentBadge
             icon="⚡"
             name="Behavioral"
             text="Pre-order option: 2-tap action, zero willpower (Fogg B=MAT model)"
+            accent="#8b5cf6"
           />
         </div>
       </div>
@@ -87,9 +90,22 @@ export function SignalExplanationPanel({ open }: { open: boolean }) {
   );
 }
 
-function AgentBadge({ icon, name, text }: { icon: string; name: string; text: string }) {
+function AgentBadge({
+  icon,
+  name,
+  text,
+  accent,
+}: {
+  icon: string;
+  name: string;
+  text: string;
+  accent: string;
+}) {
   return (
-    <div className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2">
+    <div
+      className="flex items-start gap-2 rounded-lg border border-white/10 bg-white/[0.03] px-3 py-2"
+      style={{ borderLeft: `2px solid ${accent}` }}
+    >
       <span className="text-base leading-tight" aria-hidden>
         {icon}
       </span>
