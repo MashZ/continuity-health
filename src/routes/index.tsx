@@ -7,12 +7,13 @@ import { LearningVelocity } from "@/components/continuity/LearningVelocity";
 import { LifesEssential8Card } from "@/components/continuity/LifesEssential8Card";
 import { EscalationBanner } from "@/components/continuity/EscalationBanner";
 import { StackRail } from "@/components/continuity/StackRail";
+import { OperatingCenter } from "@/components/continuity/OperatingCenter";
 
 export const Route = createFileRoute("/")({
   component: Index,
 });
 
-type Tab = "dashboard" | "learning";
+type Tab = "dashboard" | "learning" | "operating";
 
 function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
   const base =
@@ -38,6 +39,15 @@ function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
             <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
           )}
         </button>
+        <button
+          onClick={() => setTab("operating")}
+          className={`${base} ${tab === "operating" ? "text-[#e2e8f0]" : ""}`}
+        >
+          Operating Center
+          {tab === "operating" && (
+            <span className="absolute bottom-0 left-3 right-3 h-0.5 rounded-full bg-[#00d4aa]" />
+          )}
+        </button>
       </div>
     </nav>
   );
@@ -54,16 +64,16 @@ function Index() {
       />
       <TabNav tab={tab} setTab={setTab} />
       <main className="mx-auto max-w-6xl space-y-4 px-4 py-5 pb-16">
-        {tab === "dashboard" ? (
+        {tab === "dashboard" && (
           <>
             <SignalRibbon />
             <EscalationBanner active={escalation} />
             <InterventionCard />
             <LifesEssential8Card />
           </>
-        ) : (
-          <LearningVelocity />
         )}
+        {tab === "learning" && <LearningVelocity />}
+        {tab === "operating" && <OperatingCenter />}
       </main>
       <StackRail />
     </div>
