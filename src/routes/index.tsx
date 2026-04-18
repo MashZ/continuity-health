@@ -45,14 +45,19 @@ function TabNav({ tab, setTab }: { tab: Tab; setTab: (t: Tab) => void }) {
 
 function Index() {
   const [tab, setTab] = useState<Tab>("dashboard");
+  const [escalation, setEscalation] = useState(false);
   return (
     <div className="min-h-screen bg-[#0d1117] text-[#e2e8f0]">
-      <Header />
+      <Header
+        escalation={escalation}
+        onToggleEscalation={() => setEscalation((v) => !v)}
+      />
       <TabNav tab={tab} setTab={setTab} />
       <main className="mx-auto max-w-6xl space-y-4 px-4 py-5 pb-16">
         {tab === "dashboard" ? (
           <>
             <SignalRibbon />
+            <EscalationBanner active={escalation} />
             <InterventionCard />
             <LifesEssential8Card />
           </>
